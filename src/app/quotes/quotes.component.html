@@ -11,16 +11,16 @@
                 <div class="all-cards">
                     <div *ngFor="let quote of sortQuotes let i= index" class="card" style="width: 24rem;">
                         <div class="card-body">
-                            <h4 class="card-title" appHighlightQoute>{{quote.title}} {{quote.maxlikes}}<button
+                            <h4 class="card-title" appHighlightQoutes>{{quotes.title}} {{quotes.maxlikes}}<button
                                     (click)='displayInfo(i)' class="btn btn-info btn-sm" id="quotes-button">See
                                     More</button></h4>
-                            <p class="card-text" id="param">{{quote.quote}}</p>
-                            <app-quote-details *ngIf='quote.showInfo' bind-quoty='quote'
-                                (isRead)='quoteDelete($event,i)'>
-                            </app-quote-details>
-                            <span class="card-subtitle mb-2">Posted by: <span id="name">{{quote.name}}</span><span
+                            <p class="card-text" id="param">{{quotes.quotes}}</p>
+                            <app-quotes-detail *ngIf='quotes.showInfo' bind-quoty='quotes'
+                                (isRead)='quotesDelete($event,i)'>
+                            </app-quotes-detail>
+                            <span class="card-subtitle mb-2">Posted by: <span id="name">{{quotes.name}}</span><span
                                     id="date">on: <span
-                                        id="datecolor">{{quote.datePosted|date:'short'}}</span></span></span>
+                                        id="datecolor">{{quotes.datePosted|date:'short'}}</span></span></span>
 
                         </div>
                     </div>
